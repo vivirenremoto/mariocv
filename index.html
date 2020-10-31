@@ -103,7 +103,7 @@ var interval_left, interval_right;
 $(function() {
 
 	socket.on('connect', function () {
-		$('#qr').attr('src','https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=http://mariojs.herokuapp.com/controller/?id=' + socket.socket.sessionid);
+		$('#qr').attr('src','https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=https://mario-js-remote.herokuapp.com/controller/?id=' + socket.socket.sessionid);
 	});
 	
 	socket.on('send_connection', function() {
