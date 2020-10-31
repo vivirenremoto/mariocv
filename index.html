@@ -1,150 +1,124 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>MarioJS</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	
-	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-	<link href="http://miquelcamps.com/mario/main.css?v=12" rel="stylesheet">
 
-	<script src="/socket.io/socket.io.js"></script>
-	<script>var socket = io.connect('/');</script>
-	
+<head>
+    <title>Mario Bross CV - Miquel Camps</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width">
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="public/main.css?v=5" rel="stylesheet">
+
+
+    <meta property="og:image" content="https://vivirenremoto.github.io/mariocv/public/img/social.png">
+    <meta property="og:image:secure_url" content="https://vivirenremoto.github.io/mariocv/public/img/social.png">
+    <meta property="og:image:alt" content="Mario Bross CV - Miquel Camps">
+    <meta property="og:image:type" content="image/png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mario Bross CV - Miquel Camps">
+    <meta name="twitter:image" content="https://vivirenremoto.github.io/mariocv/public/img/social.png">
 </head>
+
 <body class="grey">
 
 
-<style>
-body{background:#ccc}
-.grey {-webkit-filter: grayscale(100%);}
-</style>
-
-<div id="scroll">
-	<div class="box">
-		<b>SCANEAME</b>
-		Usa el móvil para moverte por las diferentes pantallas.
-		<img id="qr">
-	</div>
-	<div class="box">
-		<b>HOLA</b>
-		Esto es un experimento hecho con javascript por <a href="http://twitter.com/miquelcamps" target="_blank">@miquelcamps</a>, la idea es mostrar mi curriculum como si fuera un videojuego.<br><br>
-		Estoy buscando trabajo de desarrollador web frontend y/o apps de iPhone e iPad.
-		<div class="share"><br>
-			<div class="tw"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://miquelcamps.com/mario/" data-text="El curriculum mas friki que he visto!" data-via="miquelcamps" data-lang="es">Twittear</a></div>
-			<div class="fb"><div class="fb-like" data-href="http://miquelcamps.com/mario/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div></div>
-		</div>
-	</div>
-	<div class="box">
-		<b>EXPERIENCIA</b>
-		<a href="http://sindelantal.com" target="_blank">sindelantal.com</a><span class="date">2012ene - 2012oct</span><br><br>
-		<a href="http://nvivo.es" target="_blank">nvivo.es</a><span class="date">2008may - 2011dic</span><br><br>
-		<a href="http://www.inspirit.net" target="_blank">intercomgi</a><span class="date">2007dic - 2008may</span>
-	</div>
-	<div class="box">
-		<b>ESTUDIOS</b>
-		Imagina Formación<br>
-		<span class="date">2011</span>
-		Curso desarrollo apps iOS<br><br>
-		Tetuan Valley<span class="date">2010 - 2011</span><br><br>
-		FP DAI - IES Montilivi<span class="date">2005 - 2007</span><br><br>
-		Academia MecaCentre<span class="date">1997 - 2002</span>
-	</div>	
-	<div class="box">
-		<b>PORTAFOLIO APPS</b>
-		- <a href="http://topigames.com" target="_blank">Topigames</a> (ipad)<br><br>
-		- <a href="http://betabeers.com/freelance/" target="_blank">Betabeers Freelance</a> (iphone)<br><br>
-		- <a href="https://itunes.apple.com/es/app/epictrackin/id570513187" target="_blank">Epictrackin</a> (iphone)<br><br>
-		- <a href="https://itunes.apple.com/us/app/epicbuyer/id569452989" target="_blank">Epicbuyer</a> (iphone)<br><br>
-		- <a href="https://itunes.apple.com/es/app/talkdir/id446166930" target="_blank">Talkdir</a> (iphone)<br><br>
-		- <a href="https://itunes.apple.com/es/app/randeats/id445331881" target="_blank">Randeats</a> (iphone)
-	</div>
-	<div class="box">
-		<b>PORTAFOLIO WEBS</b>
-		- <a href="http://betabeers.com" target="_blank">Betabeers</a> (symfony2)<br><br>
-		- <a href="http://epicbuyer.com" target="_blank">Epicbuyer</a> (php)<br><br>
-		- <a href="http://epiclanding.com" target="_blank">Epiclanding</a> (php)<br><br>
-		- <a href="http://comil.us" target="_blank">Comil.us</a> (javascript)<br><br>
-		- <a href="http://migueldev.com/esp/" target="_blank">Situación gobierno españa</a> (php)
-	</div>
-	<div class="box">
-		<b>CHARLAS</b>
-		<a href="https://speakerdeck.com/u/betabeers/p/potencia-tu-web-con-apis-en-adwe-madrid" target="_blank">ADWE Madrid</a><span class="date">18/10/2011</span><br><br>
-		<a href="https://speakerdeck.com/u/betabeers/p/symfony-madrid-directorio-betabeers" target="_blank">Symfony Madrid</a><span class="date">01/03/2012</span><br><br>
-		<a href="https://speakerdeck.com/u/betabeers/p/apps-3" target="_blank">Ono Meeting Point</a><span class="date">19/06/2012</span><br><br>
-		<a href="https://speakerdeck.com/u/betabeers/p/to" target="_blank">NSCoder Madrid</a><span class="date">10/10/2012</span>
-	</div>
-	<div class="box">
-		<b>CONTACTO</b>
-		- <a href="mailto:hola@miquelcamps.com" target="_blank">hola@miquelcamps.com</a><br><br>
-		- <a href="http://twitter.com/miquelcamps" target="_blank">Twitter</a><br><br>
-		- <a href="http://es.linkedin.com/in/miquelcamps" target="_blank">Linkedin</a><br><br>
-		- <a href="http://miquelcamps.tumblr.com/" target="_blank">Tumblr</a><br><br>
-		Si te ha gustado este experimento,<br>
-		compartelo para ayudarme a buscar trabajo ¡gracias!
-		<div class="share"><br>
-			<div class="tw"><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://miquelcamps.com/mario/" data-text="El curriculum mas friki que he visto!" data-via="miquelcamps" data-lang="es">Twittear</a></div>
-			<div class="fb"><div class="fb-like" data-href="http://miquelcamps.com/mario/" data-send="false" data-layout="button_count" data-width="120" data-show-faces="false"></div></div>
-		</div>
-	</div>
-</div>
+    <div id="scroll">
+        <div class="box">
+            <b>HOLA</b>
+            Esto es un experimento hecho con javascript por <a href="http://twitter.com/vivirenremoto"
+                target="_blank">@vivirenremoto</a>, la idea es mostrar mi curriculum como si fuera un
+            videojuego.<br><br>
+            Puedes navegar usando el teclado o las flechas que aparecen abajo.
+            <div class="share"><br>
+                <a class="tweet" href="#">Tweet</a>
+            </div>
+        </div>
+        <div class="box">
+            <b>EXPERIENCIA</b>
+            - <a href="https://isocialweb.agency" target="_blank">isocialweb</a><br><br>
+            - <a href="https://prensarank.com" target="_blank">prensarank</a><br><br>
+            - <a href="https://internetrepublica.com" target="_blank">internet república</a><br><br>
+            - <a href="https://sindelantal.com" target="_blank">sindelantal</a><br><br>
+            - <a href="https://nvivo.es" target="_blank">nvivo.es</a><br><br>
+        </div>
+        <div class="box">
+            <b>ESTUDIOS</b>
+            - El Bronx - 2017<br><br>
+            - Imagina Formación - 2011<br><br>
+            - Tetuan Valley - 2010<br><br>
+            - FP DAI, IES Montilivi - 2005
+        </div>
+        <div class="box">
+            <b>PORTAFOLIO</b>
+            - <a href="https://perfectsetup.pro" target="_blank">PerfectSetup</a><br><br>
+            - <a href="https://affinder.com" target="_blank">Affinder</a><br><br>
+            - <a href="https://demo.vivirenremoto.com" target="_blank">Plugins WordPress</a><br><br>
+            - <a href="https://betabeers.com" target="_blank">Betabeers</a><br><br>
+            - <a href="https://vivirenremoto.github.io/portafolio/" target="_blank">Más proyectos</a>
+        </div>
+        <div class="box">
+            <b>CHARLAS</b>
+            - <a href="https://speakerdeck.com/u/betabeers/p/potencia-tu-web-con-apis-en-adwe-madrid"
+                target="_blank">ADWE
+                Madrid - 2011</a><br><br>
+            - <a href="https://speakerdeck.com/u/betabeers/p/symfony-madrid-directorio-betabeers"
+                target="_blank">Symfony
+                Madrid - 2012</a><br><br>
+            - <a href="https://speakerdeck.com/u/betabeers/p/apps-3" target="_blank">Ono Meeting Point -
+                2012</a><br><br>
+            - <a href="https://speakerdeck.com/u/betabeers/p/to" target="_blank">NSCoder Madrid - 2012</a>
+        </div>
+        <div class="box">
+            <b>CONTACTO</b>
+            - <a href="mailto:hola@miquelcamps.es" target="_blank">hola@miquelcamps.es</a><br>
+            - <a href="https://twitter.com/vivirenremoto" target="_blank">Twitter</a><br>
+            - <a href="https://es.linkedin.com/in/miquelcamps" target="_blank">Linkedin</a><br>
+            - <a href="https://vivirenremoto.com/" target="_blank">Blog</a><br><br>
+            Si te ha gustado este experimento,<br>
+            compartelo para ayudarme a buscar trabajo ¡gracias!
+            <div class="share"><br>
+                <a class="tweet" href="#">Tweet</a>
+            </div>
+        </div>
+    </div>
 
 
-<div id="floor">
-	<img id="mario" src="http://miquelcamps.com/mario/img/blank.png" alt="mario bros">
-</div>
+    <div id="floor">
+        <img id="mario" src="public/img/blank.png" alt="mario bros">
+    </div>
 
 
 
-<script src="/static/game.js"></script>
 
-<script>
-var interval_left, interval_right;
+    <div id="btn_left">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-left-square-fill" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm9.5 8.5a.5.5 0 0 0 0-1H5.707l2.147-2.146a.5.5 0 1 0-.708-.708l-3 3a.5.5 0 0 0 0 .708l3 3a.5.5 0 0 0 .708-.708L5.707 8.5H11.5z" />
+        </svg>
+    </div>
 
-$(function() {
+    <div id="btn_right">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-right-square-fill" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+                d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm2.5 8.5a.5.5 0 0 1 0-1h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5z" />
+        </svg>
+    </div>
 
-	socket.on('connect', function () {
-		$('#qr').attr('src','https://chart.googleapis.com/chart?chs=200x200&cht=qr&chl=https://mario-js-remote.herokuapp.com/controller/?id=' + socket.socket.sessionid);
-	});
-	
-	socket.on('send_connection', function() {
-		$("body").removeClass('grey').css('background','#6B88FF');
-		$('#qr').hide();
-    });
-    
-    ////////////////
-    
-	socket.on('send_left', function() {
-        direction = false;
-        interval_left = setInterval(function(){
-	        moveTo('left');
-	    },100);
-    });
-    
-	socket.on('send_right', function() {
-        direction = false;        
-        interval_right = setInterval(function(){
-	        moveTo('right');
-	    },100);
-    });
-        
-	socket.on('send_stop', function() {
-		clearInterval(interval_left);
-		clearInterval(interval_right);
-    });    
 
-});
-</script>
 
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=182629061816524";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+
+
+    <script src="public/game.js?v=2"></script>
+
+
+
+
 
 
 </body>
+
 </html>
