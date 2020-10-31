@@ -2,7 +2,7 @@
     "name": "mariojs",
     "version": "0.0.1",
     "dependencies": {
-        "express": "latest",
-        "socket.io": "latest"
+        "express": "4.5.0",
+        "socket.io": "1.0.6"
     }
 }
