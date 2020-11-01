@@ -48,6 +48,17 @@ function moveTo(pos) {
         direction = false;
     }
 
+
+    // reach end
+    if (scroll_x < (parseInt($('#scroll').css('width')) * -1)) {
+        scroll_x = $(window).width();
+
+
+        // reach start
+    } else if (scroll_x > $(window).width()) {
+        scroll_x = parseInt($('#scroll').css('width')) * -1;
+    }
+
     $('#scroll').css('left', scroll_x + 'px');
     $('#floor').css('background-position-x', floor_x + 'px');
     $('#mario').css('background-position-x', mario_x + 'px');
