@@ -3,6 +3,7 @@ var scroll_x = $(window).width() / 2;
 var floor_x = 0;
 var mario_x = 0;
 var direction = false;
+var music_play = false;
 
 if (ismobile) scroll_x -= 170;
 else scroll_x -= 240;
@@ -50,6 +51,45 @@ function moveTo(pos) {
 }
 
 
+function playMusic() {
+
+    if (!music_play) {
+        document.getElementById("bg_music").play();
+        music_play = true;
+    }
+}
+
+function moveLeft() {
+    playMusic();
+
+    direction = false;
+    if (!interval_left) {
+        interval_left = setInterval(function () {
+            moveTo('left');
+        }, 100);
+    }
+}
+
+
+function moveRight() {
+    playMusic();
+
+    direction = false;
+    if (!interval_right) {
+        interval_right = setInterval(function () {
+            moveTo('right');
+        }, 100);
+    }
+}
+
+function stopMove() {
+    clearInterval(interval_left);
+    clearInterval(interval_right);
+    interval_left = false;
+    interval_right = false;
+}
+
+
 var interval_left, interval_right;
 
 $(function () {
@@ -58,54 +98,28 @@ $(function () {
     ////////////////
 
     $("body").keydown(function (e) {
-        if (e.keyCode == 37) { // left
-            direction = false;
-            if (!interval_left) {
-                interval_left = setInterval(function () {
-                    moveTo('left');
-                }, 100);
-            }
-        } else if (e.keyCode == 39) { // right
-            direction = false;
-            if (!interval_right) {
-                interval_right = setInterval(function () {
-                    moveTo('right');
-                }, 100);
-            }
+
+        if (e.keyCode == 37) {
+            moveLeft();
+        } else if (e.keyCode == 39) {
+            moveRight();
         }
     });
 
     $("body").keyup(function (e) {
-        clearInterval(interval_left);
-        clearInterval(interval_right);
-        interval_left = false;
-        interval_right = false;
+        stopMove();
     });
 
-
     $('#btn_left').on('mousedown touchstart', function () {
-        direction = false;
-        if (!interval_left) {
-            interval_left = setInterval(function () {
-                moveTo('left');
-            }, 100);
-        }
+        moveLeft();
     });
 
     $('#btn_right').on('mousedown touchstart', function () {
-        direction = false;
-        if (!interval_right) {
-            interval_right = setInterval(function () {
-                moveTo('right');
-            }, 100);
-        }
+        moveRight();
     });
 
     $('#btn_left, #btn_right').on('mouseup touchend', function (event) {
-        clearInterval(interval_left);
-        clearInterval(interval_right);
-        interval_left = false;
-        interval_right = false;
+        stopMove();
     });
 
 

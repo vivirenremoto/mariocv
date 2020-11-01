@@ -14,5 +14,5 @@ body{overflow-x:hidden;}
 b, span{display:block;}
 b{margin-bottom:15px;font-size:30px;}
 
-#btn_left{font-size:80px;color:white;position:fixed;left:0;bottom:-25px;}
-#btn_right{font-size:80px;color:white;position:fixed;right:0;bottom:-25px;}
+#btn_left{font-size:80px;color:white;position:fixed;left:0;bottom:-25px;cursor:pointer;}
+#btn_right{font-size:80px;color:white;position:fixed;right:0;bottom:-25px;cursor:pointer;}
