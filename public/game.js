@@ -4,6 +4,9 @@ var floor_x = 0;
 var mario_x = 0;
 var direction = false;
 var music_play = false;
+var interval_left = false;
+var interval_right = false;
+
 
 if (ismobile) scroll_x -= 170;
 else scroll_x -= 240;
@@ -52,7 +55,6 @@ function moveTo(pos) {
 
 
 function playMusic() {
-
     if (!music_play) {
         document.getElementById("bg_music").play();
         music_play = true;
@@ -69,7 +71,6 @@ function moveLeft() {
         }, 100);
     }
 }
-
 
 function moveRight() {
     playMusic();
@@ -90,15 +91,15 @@ function stopMove() {
 }
 
 
-var interval_left, interval_right;
+
 
 $(function () {
 
-
-    ////////////////
+    $("body, #scroll").click(function () {
+        playMusic();
+    });
 
     $("body").keydown(function (e) {
-
         if (e.keyCode == 37) {
             moveLeft();
         } else if (e.keyCode == 39) {
@@ -108,10 +109,6 @@ $(function () {
 
     $("body").keyup(function (e) {
         stopMove();
-    });
-
-    $("body, #scroll").click(function () {
-        playMusic();
     });
 
     $('#btn_left').on('mousedown touchstart', function () {
@@ -125,6 +122,5 @@ $(function () {
     $('#btn_left, #btn_right').on('mouseup touchend', function (event) {
         stopMove();
     });
-
 
 });
