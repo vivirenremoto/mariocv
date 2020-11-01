@@ -110,6 +110,10 @@ $(function () {
         stopMove();
     });
 
+    $("body, #scroll").click(function () {
+        playMusic();
+    });
+
     $('#btn_left').on('mousedown touchstart', function () {
         moveLeft();
     });
