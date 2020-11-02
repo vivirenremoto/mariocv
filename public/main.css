@@ -4,7 +4,7 @@ body{overflow-x:hidden;font-family: 'VT323', monospace;font-size:20px;background
 b, span{display:block;}
 b{margin-bottom:15px;font-size:30px;}
 #floor{position: absolute;background:url('img/floor.png');bottom: 0;width: 100%;left: 0;height: 106px;}
-#scroll{position:fixed;top:0;bottom:106px;width:3125px;background:url('img/background.png');background-position:left bottom;background-repeat:no-repeat;background-size:auto 100%;}
+#scroll{image-rendering: crisp-edges;position:fixed;top:0;bottom:106px;width:3125px;background:url('img/background.png');background-position:left bottom;background-repeat:no-repeat;background-size:auto 100%;}
 #mario{background-image:url('img/mario.png?v=2');background-position:top left;background-repeat:no-repeat;position:fixed;z-index:9999;bottom:106px;left:50%;margin-left:-30px;width:65px;height:129px;background-blend-mode: color;}
 .box{position:relative;height:270px;float:left;background:white;padding:20px;margin-left:100px;top:50%;margin-top:-200px;width:300px;}
 #btn_left{font-size:80px;color:white;position:fixed;left:0;bottom:-25px;cursor:pointer;}
